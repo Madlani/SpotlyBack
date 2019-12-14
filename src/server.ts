@@ -8,11 +8,12 @@ import { UserRouter } from "./routes/userRoutes";
 class Application {
     private app: express.Application;
     private port: number;
-    private readonly mongoUri: string = "mongodb+srv://rebu:Silber@rebu-8bwui.mongodb.net/test?retryWrites=true&w=majority";
+    //private readonly mongoUri: string = "mongodb+srv://rebu:Silber@rebu-8bwui.mongodb.net/test?retryWrites=true&w=majority";
+    private mongoUri: string = "mongodb://marwane:mar123@ds253388.mlab.com:53388/heroku_vk8v5w8x";
 
     constructor() {
         this.app = express();
-        this.port = +process.env.serverPort || 3000;
+        this.port = +process.env.serverPort || 8080;
         this.app.use(bodyParser.urlencoded({ extended: false }));
         this.app.use(bodyParser.json());
         this.app.use(express.static("rebu/app/src/public"));
